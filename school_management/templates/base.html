@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<header>
+<nav>
+    <div class="logo"><img src="{% static "images/download.jpg" %}" alt="" width='50px'></div>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="#">EVENT</a></li>
+            <li><a href="#">SCHOOL PORTAL</a></li>
+            <li><a href="#">TEACHERS</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">NEWS</a></li>
+        </ul>
+    </div>
+
+</nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>
