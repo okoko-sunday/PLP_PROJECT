@@ -2,10 +2,13 @@
 
 
 {% block content %}
-<div class="container">
-    <h1 class="text-center">Student Profiles</h1>
-    <div class="student-list">
-        <table class="table table-bordered">
+{% comment %} <pre>
+    Name: {{students.first_name}}
+</pre> {% endcomment %}
+<div>
+    <h1 >Student Profiles</h1>
+    <div>
+        <table border="1">
             <thead>
                 <tr>
                     <th>Profile Photo</th>
@@ -26,8 +29,8 @@
                     <td>{{ student.age }}</td>
                     <td>{{ student.current_class.level }}</td>
                     <td>{{ student.department }}</td>
-                    <td>
-                        <a href="{% url 'student_detail' student.id %}" class="btn btn-primary">View Details</a>
+                     <td>
+                        {% comment %} <a href="{% url 'student_detail' student.id %}" class="btn btn-primary">View Details</a> {% endcomment %}
                     </td>
                 </tr>
                 {% empty %}
@@ -38,5 +41,5 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> 
 {% endblock %}
