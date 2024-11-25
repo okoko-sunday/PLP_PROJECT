@@ -14,10 +14,19 @@
     <div class="navbar">
         <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="{% url "student" %}">STUDENTS</a></li>
-            <li><a href="#">EVENT</a></li>
-            <li><a href="#">SCHOOL PORTAL</a></li>
+            <li><a href="{% url "student" %}">STUDENTS</a>
+            <ul class='class_nav' align='center'>
+                <li ><a href=" {% url "student_filter" "JSS1" %} ">JSS1</a></li>
+                <li><a href="{% url "student_filter" "JSS2" %}">JSS2</a></li>
+                <li><a href="{% url "student_filter" "JSS3" %}">JSS3</a></li>
+                <li><a href="{% url "student_filter" "SS1" %}">SS1</a></li>
+                <li><a href="{% url "student_filter" "SS2" %}">SS2</a></li>
+                <li><a href="{% url "student_filter" "SS3" %}">SS3</a></li>
+            </ul> 
+            </li>
             <li><a href="#">TEACHERS</a></li>
+            <li><a href="#">SCHOOL PORTAL</a></li>
+            <li><a href="#">CLASSES</a></li>
             <li><a href="#">CONTACT</a></li>
         </ul>
     </div>
