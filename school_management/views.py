@@ -13,5 +13,9 @@ def student(request ):
     return render(request, 'student/profile.html', context)
 
 def student_filter(request, class_name):
-    students = models.Student.objects.filter(current_class__level = class_name)
+    students = models.Student.objects.filter(current_class__level = class_name).prefetch_related('subject')
     return render(request, 'student/class_filter.html', {'students':students, 'class_name':class_name})
+
+def teacher(request):
+    teachers = models.Teacher.objects.all()
+    return render(request, 'teacher/teacher.html', {'teachers':teachers})

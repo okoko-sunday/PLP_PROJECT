@@ -30,7 +30,14 @@
             <td>{{ student.age }}</td>
             <td>{{ student.current_class.level }}</td>
             <td>{{ student.department }}</td>
-            <td>{{student.subject}}</td>
+            <td>
+                <ul style="list-style: none; padding: 0px;">
+                {% for subject in student.subject.all %}
+                <li>{{subject.name}}
+                {% empty %} <small>no registered subject yet</small></li>
+                {% endfor %}
+                </ul>
+            </td>
         </tr>
         {% empty %}
         <tr>
