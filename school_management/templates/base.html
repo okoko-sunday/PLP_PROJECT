@@ -8,25 +8,30 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}">
 </head>
 <body>
-<header>
-<nav>
+<header>  
+<nav class="container">
     <div class="logo"><img src="{% static "images/download.jpg" %}" alt="" width='50px'></div>
     <div class="navbar">
         <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="{% url "student" %}">STUDENTS</a>
-            <ul class='class_nav' align='center'>
-                <li ><a href=" {% url "student_filter" "JSS1" %} ">JSS1</a></li>
-                <li><a href="{% url "student_filter" "JSS2" %}">JSS2</a></li>
-                <li><a href="{% url "student_filter" "JSS3" %}">JSS3</a></li>
-                <li><a href="{% url "student_filter" "SS1" %}">SS1</a></li>
-                <li><a href="{% url "student_filter" "SS2" %}">SS2</a></li>
-                <li><a href="{% url "student_filter" "SS3" %}">SS3</a></li>
-            </ul> 
+            <li><a href="{% url "student" %}">STUDENTS</a></li>
+            <li><a href="#">CLASSES</a>
+                <ul class='class_nav' align='center'>
+                    <li ><a href="{% url "student_filter" "JSS1" %}">JSS1</a></li>
+                    <li><a href="{% url "student_filter" "JSS2" %}">JSS2</a></li>
+                    <li><a href="{% url "student_filter" "JSS3" %}">JSS3</a></li>
+                    <li><a href="{% url "student_filter" "SS1" %}">SS1</a></li>
+                    <li><a href="{% url "student_filter" "SS2" %}">SS2</a></li>
+                    <li><a href="{% url "student_filter" "SS3" %}">SS3</a></li>
+                </ul> 
             </li>
             <li><a href=" {% url "teacher" %} ">TEACHERS</a></li>
-            <li><a href="#">SCHOOL PORTAL</a></li>
-            <li><a href="#">CLASSES</a></li>
+            <li><a href="#">SCHOOL PORTAL</a>
+                <ul class="class_nav" align='center'>
+                    <li><a href="{% url "admin:index" %}" target="_blank">Admin</a></li>
+                    <li><a href="">Student</a></li>
+                </ul>
+            </li>
             <li><a href="#">CONTACT</a></li>
         </ul>
     </div>
@@ -34,8 +39,14 @@
 </nav>
 </header>
 <main>
-    {% block content %}
-    {% endblock %}
+{% block content %}
+    <div class='container' style='border-bottom: 1px solid red; height: 500px;' >
+    <img src=" {% static "images/Education.jpg.webp" %}" alt="" style="width: 100%;height:500px; ">
+
+    </div>
+
+
+{% endblock %}
 </main>
 </body>
 </html>

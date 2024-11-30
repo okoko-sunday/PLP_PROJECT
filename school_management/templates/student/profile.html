@@ -6,7 +6,7 @@
 <div>
     <h1 > All Students Profile </h1>
     <div>
-        <table border="1" style='border-collapse:collapse;'>
+        <table border="1" style='border-collapse:collapse;' width="100%">
             <thead>
                 <tr>
                     <th>Profile Photo</th>
@@ -14,20 +14,18 @@
                     <th>Age</th>
                     <th>Current Class</th>
                     <th>Department</th>
-                    <th>Subjects</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody align="center">
                 {% for student in students %}
                 <tr>
                     <td>
                         <img src="{{ student.profile_photo.url }}" alt="Profile Photo" width="50" height="50">
                     </td>
-                    <td>{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</td>
+                    <td>{{ student.first_name }} {{ student.last_name }}</td>
                     <td>{{ student.age }}</td>
                     <td>{{ student.current_class.level }}</td>
                     <td>{{ student.department }}</td>
-                    <td>{{student.subject}}</td>
                 </tr>
                 {% empty %}
                 <tr>
